@@ -1,0 +1,27 @@
+{
+  "name": "focus-hook",
+  "version": "1.0.0",
+  "description": "Tiny utility that applies a class hook for tactical :focus styling",
+  "main": "index.js",
+  "scripts": {
+    "build:cjs": "rollup src/index.js -o dist/focus-hook.js -f cjs --exports default",
+    "build:es": "rollup src/index.js -o dist/focus-hook.module.js -f es",
+    "build": "npm run build:cjs && npm run build:es",
+    "prebuild": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillipluther/keyboard-navigation-hook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillipluther/keyboard-navigation-hook/issues"
+  },
+  "homepage": "https://github.com/phillipluther/keyboard-navigation-hook#readme",
+  "devDependencies": {
+    "rollup": "^2.70.0"
+  }
+}
