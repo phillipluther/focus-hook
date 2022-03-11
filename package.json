@@ -1,6 +1,6 @@
 {
   "name": "tactical-focus",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tiny utility that applies a class hook for tactical :focus styling",
   "main": "dist/tactical-focus.js",
   "module": "dist/tactical-focus.mjs",
