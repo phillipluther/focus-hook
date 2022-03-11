@@ -1,1 +1,1 @@
-export { default } from './focus-hook';
+export { default as focusHook } from './focus-hook';

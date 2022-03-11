@@ -4,9 +4,7 @@
   "description": "Tiny utility that applies a class hook for tactical :focus styling",
   "main": "index.js",
   "scripts": {
-    "build:cjs": "rollup src/index.js -o dist/focus-hook.js -f cjs --exports default",
-    "build:es": "rollup src/index.js -o dist/focus-hook.module.js -f es",
-    "build": "npm run build:cjs && npm run build:es",
+    "build": "rollup -c",
     "prebuild": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +20,7 @@
   },
   "homepage": "https://github.com/phillipluther/keyboard-navigation-hook#readme",
   "devDependencies": {
-    "rollup": "^2.70.0"
+    "rollup": "^2.70.0",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
