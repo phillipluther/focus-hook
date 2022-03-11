@@ -4,11 +4,11 @@ export default {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/focus-hook.js',
+      file: 'dist/tactical-focus.js',
       format: 'cjs',
     },
     {
-      file: 'dist/focus-hook.module.js',
+      file: 'dist/tactical-focus.mjs',
       format: 'es',
     },
   ],

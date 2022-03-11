@@ -1,1 +1,1 @@
-export { default as focusHook } from './focus-hook';
+export { default as tacticalFocus } from './tactical-focus';

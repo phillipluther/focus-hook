@@ -1,4 +1,4 @@
-# focus-hook
+# tactical-focus
 
 A tiny utility that applies a class hook for tactical :focus styling.
 
@@ -6,10 +6,10 @@ A tiny utility that applies a class hook for tactical :focus styling.
 
 ### tl;dr
 
-`focus-hook` lets you write CSS that says, "If an element is focused _and_ the user is actively using a keyboard."
+`tactical-focus` lets you write CSS that says, "If an element is focused _and_ the user is actively using a keyboard."
 
 ```
-.focus-hook a:focus {
+.tactical-focus a:focus {
   outline: 2px solid green;
 }
 ```
@@ -20,7 +20,7 @@ Browsers apply default `:focus` styles to focusable DOM elements, such as those 
 
 Activating focusable elements give them focus, too. This often spurs design conflicts when we don't want that bespoke button getting a giant glowing ring around it when clicked.
 
-Enter `focus-hook`. This tiny (\_N_kb, measurement incoming) library toggles a class name on an HTML document's body (or other element of your choice) so you can craft `:focus` styles applied only when a user is navigating via keyboard.
+Enter `tactical-focus`. This tiny (\_N_kb, measurement incoming) library toggles a class name on an HTML document's body (or other element of your choice) so you can craft `:focus` styles applied only when a user is navigating via keyboard.
 
 ## Usage
 

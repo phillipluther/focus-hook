@@ -7,7 +7,7 @@ export default function focusHook(userOptions = {}) {
     // target tag we'll apply the hook to (string|node)
     target: 'body',
     // name of the class hook (string)
-    name: 'kb-focus-hook',
+    name: 'tactical-focus',
     // adds semi-helpful console logging; currently does nothing (bool)
     debug: false,
 
@@ -24,7 +24,7 @@ export default function focusHook(userOptions = {}) {
   // wildly simplistic/narrow for now; we'll refine this
   function applyHook({ key }) {
     if (key === 'Tab') {
-      log('[focus-hook]', `Applying .${options.name} hook to ${target.nodeName}`);
+      log('[tactical-focus]', `Applying .${options.name} hook to ${target.nodeName}`);
 
       window.removeEventListener('keydown', applyHook);
       window.addEventListener('mousedown', removeHook);
@@ -34,7 +34,7 @@ export default function focusHook(userOptions = {}) {
   }
 
   function removeHook() {
-    log('[focus-hook]', `Removing .${options.name} hook from ${target.nodeName}`);
+    log('[tactical-focus]', `Removing .${options.name} hook from ${target.nodeName}`);
 
     window.removeEventListener('mousedown', removeHook);
     window.addEventListener('keydown', applyHook);

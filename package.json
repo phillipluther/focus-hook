@@ -1,8 +1,9 @@
 {
-  "name": "focus-hook",
+  "name": "tactical-focus",
   "version": "1.0.0",
   "description": "Tiny utility that applies a class hook for tactical :focus styling",
-  "main": "index.js",
+  "main": "dist/tactical-focus.js",
+  "module": "dist/tactical-focus.mjs",
   "scripts": {
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
@@ -10,17 +11,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phillipluther/keyboard-navigation-hook.git"
+    "url": "git+https://github.com/phillipluther/tactical-focus.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Philip Luther <dev@phillipluther.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/phillipluther/keyboard-navigation-hook/issues"
+    "url": "https://github.com/phillipluther/tactical-focus/issues"
   },
-  "homepage": "https://github.com/phillipluther/keyboard-navigation-hook#readme",
+  "homepage": "https://github.com/phillipluther/tactical-focus#readme",
   "devDependencies": {
     "rollup": "^2.70.0",
     "rollup-plugin-terser": "^7.0.2"
-  }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
 }
