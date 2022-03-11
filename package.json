@@ -1,13 +1,14 @@
 {
   "name": "tactical-focus",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Tiny utility that applies a class hook for tactical :focus styling",
   "main": "dist/tactical-focus.js",
   "module": "dist/tactical-focus.mjs",
   "scripts": {
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pub": "npx np",
+    "test": "node src/tactical-focus.test.mjs"
   },
   "repository": {
     "type": "git",
