@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
     "pub": "npx np",
-    "test": "node src/tactical-focus.test.mjs"
+    "test": "mocha ./**/*.test.mjs"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/phillipluther/tactical-focus#readme",
   "devDependencies": {
+    "jsdom": "^19.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^9.2.2",
     "rollup": "^2.70.0",
     "rollup-plugin-terser": "^7.0.2"
   },
