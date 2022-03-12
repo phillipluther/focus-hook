@@ -8,7 +8,7 @@
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
     "pub": "npx np",
-    "test": "mocha ./**/*.test.mjs"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

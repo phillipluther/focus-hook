@@ -17,6 +17,9 @@ function mockMousedown(type = 'mousedown') {
 
 before(() => {
   jsdomGlobal();
+  const customEl = document.createElement('div');
+  customEl.id = 'custom';
+  document.body.appendChild(customEl);
 });
 
 beforeEach(() => {
@@ -30,18 +33,66 @@ describe('tactical-focus', () => {
     assert.strictEqual(rootEl.classList.contains(classHook), false);
   });
 
-  it('applies a class hook on TAB press', () => {
+  it('adds the default class hook on TAB press', () => {
     tacticalFocus();
     mockKeydown();
 
     assert.strictEqual(rootEl.classList.contains(classHook), true);
   });
 
-  it('removes a class hook on mouse click', () => {
+  it('removes the default class hook on mouse click', () => {
     tacticalFocus();
     mockKeydown(); // known-good from previous test
     mockMousedown();
 
     assert.strictEqual(rootEl.classList.contains(classHook), false);
+  });
+
+  it('adds a custom class hook on TAB press', () => {
+    tacticalFocus({ name: 'custom-hook' });
+    mockKeydown();
+
+    assert.strictEqual(rootEl.classList.contains('custom-hook'), true);
+  });
+
+  it('removes a custom class hook on mouse click', () => {
+    tacticalFocus({ name: 'custom-hook' });
+    mockKeydown();
+    mockMousedown();
+
+    assert.strictEqual(rootEl.classList.contains('custom-hook'), false);
+  });
+
+  it('adds a class hook to an element with the given selector', () => {
+    tacticalFocus({ target: '#custom' });
+    mockKeydown();
+
+    assert.strictEqual(document.getElementById('custom').classList.contains(classHook), true);
+  });
+
+  it('removes a class hook from an element with the given selector', () => {
+    tacticalFocus({ target: '#custom' });
+    mockKeydown();
+    mockMousedown();
+
+    assert.strictEqual(document.getElementById('custom').classList.contains(classHook), false);
+  });
+
+  it('adds a class hook to a given node', () => {
+    const target = document.getElementById('custom');
+    tacticalFocus({ target });
+    mockKeydown();
+
+    assert.strictEqual(target.classList.contains(classHook), true);
+  });
+
+  it('removes a class hook from a given element', () => {
+    const target = document.getElementById('custom');
+    tacticalFocus({ target });
+
+    mockKeydown();
+    mockMousedown();
+
+    assert.strictEqual(target.classList.contains(classHook), false);
   });
 });
