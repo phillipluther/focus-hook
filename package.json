@@ -8,6 +8,7 @@
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
     "pub": "npx np",
+    "prepub": "npm run build",
     "test": "mocha"
   },
   "repository": {

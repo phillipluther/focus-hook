@@ -1,6 +1,6 @@
 # tactical-focus
 
-A tiny utility that applies a class hook for tactical :focus styling.
+A micro utility that applies a class hook for tactical :focus styling.
 
 ## Why?
 
@@ -20,16 +20,46 @@ Browsers apply default `:focus` styles to focusable DOM elements, such as those 
 
 Activating focusable elements give them focus, too. This often spurs design conflicts when we don't want that bespoke button getting a giant glowing ring around it when clicked.
 
-Enter `tactical-focus`. This tiny (\_N_kb, measurement incoming) library toggles a class name on an HTML document's body (or other element of your choice) so you can craft `:focus` styles applied only when a user is navigating via keyboard.
+Enter `tactical-focus`. This tiny (about 600 _bytes_) library toggles a class name on an HTML document's body (or other element of your choice) so you can craft `:focus` styles applied only when a user is navigating via keyboard.
 
 ## Usage
 
-... soon ...
+First, install `tactical-focus` from NPM --
+
+```
+> npm install tactical-focus
+```
+
+Then, import and initialize it where appropriate in your project.
+
+```
+import { initTacticalFocus } from 'tactical-focus';
+
+...
+
+initTacticalFocus();
+```
+
+### Recommended Placement
+
+`tactical-focus` is super light-weight and only runs once. You don't need to stress on optimal script placement or execution timing; just follow common sense and best practices.
+
+Since it's a utility that assists in page navigation, however, it's recommended you run it as soon as practical after the DOM is ready.
+
+### Customization Options
+
+```
+// all options and their defaults
+initTacticalFocus({
+  // class hook that gets toggle on keyboard/mouse mode of operation
+  name: 'tactical-focus',
+  // element where the class hook gets applied; accepts a selector string or DOM node
+  target: 'body',
+  // adds semi-helpful console logging
+  debug: false,
+})
+```
 
 ## License
 
 [MIT](LICENSE)
-
-## Keywords
-
-... soon ...

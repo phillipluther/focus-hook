@@ -1,1 +1,1 @@
-export { default as tacticalFocus } from './tactical-focus';
+export { default as initTacticalFocus } from './init-tactical-focus';

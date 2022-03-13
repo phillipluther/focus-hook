@@ -1,6 +1,6 @@
 import assert from 'assert';
 import jsdomGlobal from 'jsdom-global';
-import tacticalFocus from './tactical-focus.mjs';
+import tacticalFocus from './init-tactical-focus.mjs';
 
 let rootEl;
 let classHook;
