@@ -2,8 +2,8 @@
   "name": "tactical-focus",
   "version": "0.2.0",
   "description": "Tiny utility that applies a class hook for tactical :focus styling",
-  "main": "dist/tactical-focus.js",
-  "module": "dist/tactical-focus.mjs",
+  "main": "dist/init-tactical-focus.js",
+  "module": "dist/init-tactical-focus.mjs",
   "scripts": {
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
