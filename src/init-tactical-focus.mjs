@@ -1,4 +1,4 @@
-export default function initTacticalFocus(userOptions = {}) {
+export function initTacticalFocus(userOptions = {}) {
   const { target, name, debug } = {
     target: 'body',
     name: 'tactical-focus',
@@ -17,7 +17,9 @@ export default function initTacticalFocus(userOptions = {}) {
       window.removeEventListener('keydown', activateKeyboardMode);
       window.addEventListener('mousedown', activateMouseMode);
 
-      targetEl.classList.add(name);
+      if (targetEl !== null) {
+        targetEl.classList.add(name);
+      }
     }
   }
 
@@ -29,7 +31,9 @@ export default function initTacticalFocus(userOptions = {}) {
     window.removeEventListener('mousedown', activateMouseMode);
     window.addEventListener('keydown', activateKeyboardMode);
 
-    targetEl.classList.remove(name);
+    if (targetEl !== null) {
+      targetEl.classList.remove(name);
+    }
   }
 
   // default mouse

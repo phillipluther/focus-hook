@@ -1,6 +1,6 @@
 import assert from 'assert';
 import jsdomGlobal from 'jsdom-global';
-import tacticalFocus from './init-tactical-focus.mjs';
+import { initTacticalFocus } from './init-tactical-focus.mjs';
 
 let rootEl;
 let classHook;
@@ -29,19 +29,19 @@ beforeEach(() => {
 
 describe('tactical-focus', () => {
   it('applies no class hook on init', () => {
-    tacticalFocus();
+    initTacticalFocus();
     assert.strictEqual(rootEl.classList.contains(classHook), false);
   });
 
   it('adds the default class hook on TAB press', () => {
-    tacticalFocus();
+    initTacticalFocus();
     mockKeydown();
 
     assert.strictEqual(rootEl.classList.contains(classHook), true);
   });
 
   it('removes the default class hook on mouse click', () => {
-    tacticalFocus();
+    initTacticalFocus();
     mockKeydown(); // known-good from previous test
     mockMousedown();
 
@@ -49,14 +49,14 @@ describe('tactical-focus', () => {
   });
 
   it('adds a custom class hook on TAB press', () => {
-    tacticalFocus({ name: 'custom-hook' });
+    initTacticalFocus({ name: 'custom-hook' });
     mockKeydown();
 
     assert.strictEqual(rootEl.classList.contains('custom-hook'), true);
   });
 
   it('removes a custom class hook on mouse click', () => {
-    tacticalFocus({ name: 'custom-hook' });
+    initTacticalFocus({ name: 'custom-hook' });
     mockKeydown();
     mockMousedown();
 
@@ -64,35 +64,63 @@ describe('tactical-focus', () => {
   });
 
   it('adds a class hook to an element with the given selector', () => {
-    tacticalFocus({ target: '#custom' });
+    initTacticalFocus({ target: '#custom' });
     mockKeydown();
 
-    assert.strictEqual(document.getElementById('custom').classList.contains(classHook), true);
+    const el = document.getElementById('custom');
+
+    if (el !== null) {
+      assert.strictEqual(el.classList.contains(classHook), true);
+    } else {
+      throw new assert.AssertionError({
+        message: 'Target is null',
+      });
+    }
   });
 
   it('removes a class hook from an element with the given selector', () => {
-    tacticalFocus({ target: '#custom' });
+    initTacticalFocus({ target: '#custom' });
     mockKeydown();
     mockMousedown();
 
-    assert.strictEqual(document.getElementById('custom').classList.contains(classHook), false);
+    const el = document.getElementById('custom');
+
+    if (el !== null) {
+      assert.strictEqual(el.classList.contains(classHook), false);
+    } else {
+      throw new assert.AssertionError({
+        message: 'Target is null',
+      });
+    }
   });
 
   it('adds a class hook to a given node', () => {
     const target = document.getElementById('custom');
-    tacticalFocus({ target });
+    initTacticalFocus({ target });
     mockKeydown();
 
-    assert.strictEqual(target.classList.contains(classHook), true);
+    if (target !== null) {
+      assert.strictEqual(target.classList.contains(classHook), true);
+    } else {
+      throw new assert.AssertionError({
+        message: 'Target is null',
+      });
+    }
   });
 
   it('removes a class hook from a given element', () => {
     const target = document.getElementById('custom');
-    tacticalFocus({ target });
+    initTacticalFocus({ target });
 
     mockKeydown();
     mockMousedown();
 
-    assert.strictEqual(target.classList.contains(classHook), false);
+    if (target !== null) {
+      assert.strictEqual(target.classList.contains(classHook), false);
+    } else {
+      throw new assert.AssertionError({
+        message: 'Target is null',
+      });
+    }
   });
 });

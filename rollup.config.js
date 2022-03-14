@@ -1,7 +1,7 @@
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: 'src/index.js',
+  input: 'src/init-tactical-focus.mjs',
   output: [
     {
       file: 'dist/init-tactical-focus.js',

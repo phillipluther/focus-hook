@@ -4,18 +4,27 @@
   "description": "Tiny utility that applies a class hook for tactical :focus styling",
   "main": "dist/init-tactical-focus.js",
   "module": "dist/init-tactical-focus.mjs",
+  "types": "dist/init-tactical-focus.d.ts",
   "scripts": {
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
+    "postbuild": "cp src/*.d.ts dist",
     "pub": "npx np",
     "prepub": "npm run build",
-    "test": "mocha"
+    "test": "mocha src/**/*.test.mjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/phillipluther/tactical-focus.git"
   },
-  "keywords": [],
+  "keywords": [
+    "focus",
+    "outline",
+    "accessibility",
+    "keyboard",
+    "mouse",
+    "navigation"
+  ],
   "author": "Philip Luther <dev@phillipluther.com>",
   "license": "MIT",
   "bugs": {
