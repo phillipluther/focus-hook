@@ -1,9 +1,9 @@
-export function initTacticalFocus(userOptions = {}) {
+export function initTacticalFocus(options = {}) {
   const { target, name, debug } = {
     target: 'body',
     name: 'tactical-focus',
     debug: false,
-    ...userOptions,
+    ...options,
   };
 
   const targetEl = typeof target === 'string' ? document.querySelector(target) : target;
