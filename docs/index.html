@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tactical Focus | Demo</title>
+    <meta
+      name="description"
+      content="Comparing behaviors on focusable elements for accessibility; tactical focus VS :focus-visible VS browser default"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="Tactical Focus | Demo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      h1,
+      hr {
+        width: 100%;
+      }
+
+      section {
+        margin-right: 32px;
+      }
+
+      div {
+        margin: 16px 0;
+      }
+
+      .fv:focus-visible {
+        outline: 4px solid purple;
+      }
+
+      .tactical-focus .tf:focus {
+        outline: 4px solid purple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tactical Focus Demo</h1>
+    <hr />
+
+    <section class="section">
+      <h2>Browser Default Behavior</h2>
+      <hr />
+      <form action="#">
+        <div>
+          <label for="input1">An Input Field</label>
+          <input id="input1" name="input1" />
+        </div>
+
+        <div>
+          <label for="input2">Another Input Field</label>
+          <input id="input2" name="input2" />
+        </div>
+
+        <div>
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>:focus-visible Behavior</h2>
+      <hr />
+      <form action="#">
+        <div>
+          <label for="input3">An Input Field</label>
+          <input class="fv" id="input3" name="input3" />
+        </div>
+
+        <div>
+          <label for="input4">Another Input Field</label>
+          <input class="fv" id="input4" name="input4" />
+        </div>
+
+        <div>
+          <button class="fv" type="reset">Reset</button>
+          <button class="fv" type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>Tactical Focus Behavior</h2>
+      <hr />
+      <form action="#">
+        <div>
+          <label for="input5">An Input Field</label>
+          <input class="tf" id="input5" name="input5" />
+        </div>
+
+        <div>
+          <label for="input6">Another Input Field</label>
+          <input class="tf" id="input6" name="input6" />
+        </div>
+
+        <div>
+          <button class="tf" type="reset">Reset</button>
+          <button class="tf" type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <div>
+      <p>Spot the differences by --</p>
+      <ol>
+        <li>Tabbing through each form field</li>
+        <li>Clicking on each form field individually</li>
+      </ol>
+    </div>
+
+    <script src="init-tactical-focus.js"></script>
+    <script>
+      tf.initTacticalFocus();
+    </script>
+  </body>
+</html>

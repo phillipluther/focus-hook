@@ -6,7 +6,9 @@ A micro utility that applies a class hook for tactical :focus styling.
 
 ### tl;dr
 
-`tactical-focus` lets you write CSS that says, "If an element is focused _and_ the user is actively using a keyboard."
+There's a good chance you just want to use `:focus-visible` ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)/[CanIUse](https://caniuse.com/?search=focus-visible)). That said ...
+
+`tactical-focus` lets you write CSS targeting currently-focused elements when a user is actively navigating via keyboard. Note that's subtly different than the `:focus-visible` selector.
 
 ```
 .tactical-focus a:focus {
@@ -14,11 +16,15 @@ A micro utility that applies a class hook for tactical :focus styling.
 }
 ```
 
+### Demo, Please
+
+Here's a [demo](https://phillipluther.github.io/tactical-focus/) comparing `tactical-focus` VS `:focus-visible` VS browser defaults
+
 ### Not Too Long; Did Read
 
-Browsers apply default `:focus` styles to focusable DOM elements, such as those blue or yellow outlines in Webkit-/Blink-based browsers or Firefox's dotted gray border. Removing these defaults makes keyboard operability difficult, if not impossible, since you have no idea which element is focused.
+Browsers apply default user agent styles to focusable DOM elements based on native heuristics, like those blue or yellow outlines in Webkit-/Blink-based browsers or Firefox's dotted gray borders. Removing these defaults makes keyboard operability difficult, if not impossible, since you have no idea which element is focused.
 
-Activating focusable elements give them focus, too. This often spurs design conflicts when we don't want that bespoke button getting a giant glowing ring around it when clicked.
+Clicking on focusable elements give them focus, too. This often spurs design conflicts when we don't want that bespoke button or form input getting a giant glowing ring around it when clicked.
 
 Enter `tactical-focus`. This tiny (about 600 _bytes_) library toggles a class name on an HTML document's body (or other element of your choice) so you can craft `:focus` styles applied only when a user is navigating via keyboard.
 

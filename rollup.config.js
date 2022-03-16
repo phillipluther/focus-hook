@@ -11,6 +11,11 @@ export default {
       file: 'dist/init-tactical-focus.mjs',
       format: 'es',
     },
+    {
+      file: 'docs/init-tactical-focus.js',
+      format: 'iife',
+      name: 'tf',
+    },
   ],
   plugins: [terser()],
 };

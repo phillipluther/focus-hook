@@ -9,6 +9,8 @@
     "build": "rollup -c",
     "prebuild": "rm -rf dist",
     "postbuild": "cp src/*.d.ts dist",
+    "predemo": "rm docs/*.js",
+    "demo": "npm run build",
     "pub": "npx np",
     "prepub": "npm run build",
     "test": "mocha src/**/*.test.mjs"
