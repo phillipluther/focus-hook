@@ -14,7 +14,9 @@
     "demo": "pnpm build",
     "pub": "pnpm dlx np",
     "prepub": "pnpm build",
-    "test": "mocha src/**/*.test.mjs"
+    "test": "mocha src/**/*.test.mjs",
+    "preserve": "pnpm demo",
+    "serve": "pnpm dlx http-server docs"
   },
   "repository": {
     "type": "git",
