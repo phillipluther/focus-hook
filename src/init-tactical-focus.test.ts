@@ -1,9 +1,9 @@
 import assert from 'assert';
 import jsdomGlobal from 'jsdom-global';
-import { initTacticalFocus } from './init-tactical-focus.mjs';
+import { initTacticalFocus } from './init-tactical-focus';
 
-let rootEl;
-let classHook;
+let rootEl: HTMLElement;
+let classHook: string;
 
 function mockKeydown(key = 'Tab') {
   const event = new window.KeyboardEvent('keydown', { key });

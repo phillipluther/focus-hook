@@ -1,4 +1,10 @@
-export function initTacticalFocus(options = {}) {
+export interface InitTacticalFocusOptions {
+  target?: string | HTMLElement | null;
+  name?: string;
+  debug?: boolean;
+}
+
+export function initTacticalFocus(options:InitTacticalFocusOptions = {}): void {
   const { target, name, debug } = {
     target: 'body',
     name: 'tactical-focus',
@@ -8,7 +14,7 @@ export function initTacticalFocus(options = {}) {
 
   const targetEl = typeof target === 'string' ? document.querySelector(target) : target;
 
-  function activateKeyboardMode({ key }) {
+  function activateKeyboardMode({ key }: KeyboardEvent) {
     if (key === 'Tab') {
       if (debug) {
         console.log('[tactical-focus] Activating keyboard mode');

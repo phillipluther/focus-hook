@@ -1,7 +1,8 @@
+import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 
 export default {
-  input: 'src/init-tactical-focus.mjs',
+  input: 'src/init-tactical-focus.ts',
   output: [
     {
       file: 'dist/init-tactical-focus.js',
@@ -11,11 +12,6 @@ export default {
       file: 'dist/init-tactical-focus.mjs',
       format: 'es',
     },
-    {
-      file: 'docs/init-tactical-focus.js',
-      format: 'iife',
-      name: 'tf',
-    },
   ],
-  plugins: [terser()],
+  plugins: [typescript(), terser()],
 };
