@@ -7,16 +7,13 @@
   "module": "dist/init-tactical-focus.mjs",
   "types": "dist/init-tactical-focus.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "prebuild": "rm -rf dist",
-    "postbuild": "cp src/*.d.ts dist",
-    "predemo": "rm docs/*.js",
-    "demo": "pnpm build",
-    "pub": "pnpm dlx np",
-    "prepub": "pnpm build",
-    "test": "mocha src/**/*.test.mjs",
-    "preserve": "pnpm demo",
-    "serve": "pnpm dlx http-server docs"
+    "build": "pnpm clean && rollup -c && pnpm copy:docs && pnpm clean:dist",
+    "copy:docs": "cp dist/init-tactical-focus.mjs docs/init-tactical-focus.mjs",
+    "clean": "rm -rf dist && rm -rf docs/*.*js",
+    "clean:dist": "rm dist/*test*",
+    "pub": "pnpm build && pnpm dlx np",
+    "test": "mocha src/**/*.test.ts",
+    "serve": "pnpm build && pnpm dlx http-server docs"
   },
   "repository": {
     "type": "git",
@@ -38,10 +35,17 @@
   "homepage": "https://github.com/phillipluther/tactical-focus#readme",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/jsdom-global": "^3.0.7",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.16",
     "jsdom": "^24.0.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^10.2.0",
-    "rollup": "^4.9.6"
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   },
   "files": [
     "dist",
