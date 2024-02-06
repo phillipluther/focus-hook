@@ -11,9 +11,9 @@
     "prebuild": "rm -rf dist",
     "postbuild": "cp src/*.d.ts dist",
     "predemo": "rm docs/*.js",
-    "demo": "npm run build",
-    "pub": "npx np",
-    "prepub": "npm run build",
+    "demo": "pnpm build",
+    "pub": "pnpm dlx np",
+    "prepub": "pnpm build",
     "test": "mocha src/**/*.test.mjs"
   },
   "repository": {
