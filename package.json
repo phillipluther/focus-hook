@@ -1,6 +1,7 @@
 {
   "name": "tactical-focus",
   "version": "0.2.3",
+  "type": "module",
   "description": "Tiny utility that applies a class hook for tactical :focus styling",
   "main": "dist/init-tactical-focus.js",
   "module": "dist/init-tactical-focus.mjs",
@@ -34,11 +35,11 @@
   },
   "homepage": "https://github.com/phillipluther/tactical-focus#readme",
   "devDependencies": {
-    "jsdom": "^19.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "jsdom": "^24.0.0",
     "jsdom-global": "^3.0.2",
-    "mocha": "^9.2.2",
-    "rollup": "^2.70.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "mocha": "^10.2.0",
+    "rollup": "^4.9.6"
   },
   "files": [
     "dist",
