@@ -10,7 +10,7 @@ The need for this utility is nuanced. There's a good chance you want to use `:fo
 
 `tactical-focus` lets you write CSS targeting currently-focused elements when a user is actively navigating via keyboard. Note that it's subtly different than the `:focus-visible` selector.
 
-```
+```css
 .tactical-focus a:focus {
   outline: 2px solid green;
 }
@@ -34,13 +34,13 @@ Enter `tactical-focus`. This tiny (about 600 _bytes_) library toggles a class na
 
 First, install `tactical-focus` --
 
-```
-npm install tactical-focus
+```bash
+$ npm install tactical-focus
 ```
 
 Then, import and initialize it in your project.
 
-```
+```js
 import { initTacticalFocus } from 'tactical-focus';
 
 ...
@@ -56,7 +56,7 @@ Since it's a utility that assists in-page navigation, however, it's recommended 
 
 ### Customization Options
 
-```
+```js
 // all options and their defaults
 initTacticalFocus({
   // class hook that gets toggled on keyboard/mouse mode of operation
